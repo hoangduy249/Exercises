@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS laptop_store;
+USE laptop_store;
+
+CREATE TABLE IF NOT EXISTS laptops (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    processor VARCHAR(100),
+    ram INT,
+    storage VARCHAR(50),
+    price DECIMAL(12,2),
+    quantity INT DEFAULT 0,
+    release_year YEAR,
+    description TEXT
+);
+
+INSERT INTO laptops (brand, model, processor, ram, storage, price, quantity, release_year, description)
+VALUES 
+('Dell', 'XPS 13', 'Intel Core i7-1250U', 16, '512GB SSD', 1500.00, 10, 2023, 'Ultrabook high-end for the office'),
+('HP', 'Omen 16', 'Intel Core i9-13900H', 32, '1TB SSD', 2200.00, 5, 2024, 'Laptop gaming high performance'),
+('Asus', 'Zenbook 14', 'AMD Ryzen 7 7840U', 16, '1TB SSD', 1400.00, 8, 2023, 'Slim fit, long battery life'),
+('Apple', 'MacBook Pro 14', 'Apple M3 Pro', 16, '512GB SSD', 2400.00, 6, 2025, 'MacBook Pro new, chipset M3 Pro strong');
